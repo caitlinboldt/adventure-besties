@@ -1,16 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
+import largeLogo from "./Adventure-Besties-large-logo.png";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>Adventure Besties</p>
+        <img src={largeLogo} className="App-logo" alt="Butterfly hand" />
       </header>
+      <h1 className="App-title">Adventure Besties</h1>
     </div>
   );
 }

@@ -1,4 +1,6 @@
 .App {
+  background-color: #f5f5f5;
+  height: 100vh;
   text-align: center;
 }
 
@@ -14,18 +16,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 55vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #db7f79;
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  color: #66a1de;
+  font-family: "Overpass";
+  font-size: 80px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  margin: 0;
 }
 
 @keyframes App-logo-spin {
