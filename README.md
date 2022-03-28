@@ -1,5 +1,15 @@
 # Adventure Besties
 
+## Description
+
+Adventure Besties is an application for people who enjoy planning and traveling. It will allow users to add a new adventure and plan it alongside their friends.
+
+## High-level Architecture
+
+![high-level architecture](design/Adventure-Besties.drawio.png)
+
+## React Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
