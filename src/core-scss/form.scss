@@ -1,0 +1,27 @@
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  input {
+    color: $brand-black;
+    font-size: 14px;
+    height: 50px;
+    letter-spacing: 0.5px;
+    margin: 10px 0;
+    padding-left: 10px;
+    width: 350px;
+
+    &:focus,
+    &:focus-visible {
+      border: 2px solid $brand-light-blue;
+      outline: $brand-light-blue;
+    }
+
+    &::placeholder {
+      color: $brand-black;
+      font-size: 14px;
+    }
+  }
+}

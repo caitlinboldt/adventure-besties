@@ -1,0 +1,75 @@
+@import "core-scss/index.scss";
+
+.mainContainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  h3 {
+    color: $brand-black;
+    font-family: "Overpass", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 15px 0;
+    text-align: left;
+  }
+
+  .loginContainer {
+    align-items: center;
+    border: 1px solid $brand-black;
+    display: flex;
+    flex-flow: column;
+    height: 400px;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 500px;
+
+    .innerLoginContainer {
+      h6 {
+        color: $brand-black;
+        font-size: 22px;
+        margin: 20px 0 0 0;
+      }
+
+      .loginButtonContainer {
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+        margin: 0;
+        width: 358px;
+
+        .forgotPasswordLink {
+          color: $brand-light-blue;
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          text-underline-offset: 3px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .loginButton {
+          background-color: $brand-blue;
+          border: 1px solid $brand-blue;
+          border-radius: 5px;
+          color: $brand-white;
+          cursor: pointer;
+          font-family: "Raleway", sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          margin: 10px 0;
+          padding: 10px 25px;
+          transition: all 0.4s;
+
+          &:hover {
+            background-color: $brand-white;
+            color: $brand-blue;
+          }
+        }
+      }
+    }
+  }
+}

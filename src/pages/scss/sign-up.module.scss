@@ -1,0 +1,44 @@
+@import "core-scss/index.scss";
+
+.mainContainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  h3 {
+    color: $brand-black;
+    font-family: "Overpass", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 15px 0;
+    text-align: left;
+  }
+
+  .signUpContainer {
+    align-items: center;
+    border: 1px solid $brand-black;
+    display: flex;
+    flex-flow: column;
+    height: 400px;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    .innerSignUpContainer {
+      h6 {
+        color: $brand-black;
+        font-size: 22px;
+        margin: 20px 0 0 0;
+      }
+
+      .buttonContainer {
+        display: flex;
+        flex-flow: row;
+
+        .brandBlueButton {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

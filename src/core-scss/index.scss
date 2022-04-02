@@ -1,0 +1,10 @@
+@import "variables.scss";
+@import "form.scss";
+@import "action.scss";
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

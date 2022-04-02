@@ -1,14 +1,23 @@
-import largeLogo from "./Adventure-Besties-large-logo.png";
-import "./App.scss";
+import React, { useEffect } from "react";
+import Amplify from "aws-amplify";
+import { AppRoutes } from "./routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    Amplify.configure({
+      Auth: {
+        region: process.env.REACT_APP_REGION,
+        userPoolId: process.env.REACT_APP_USER_POOL_ID,
+        userPoolWebClientId: process.env.REACT_APP_USER_POOL_WEB_CLIENT_ID,
+      },
+    });
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={largeLogo} className="App-logo" alt="Butterfly hand" />
-      </header>
-      <h1 className="App-title">Adventure Besties</h1>
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 
