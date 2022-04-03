@@ -29,11 +29,15 @@
 .landingTitle {
   color: $brand-blue;
   font-family: "Overpass", sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 600;
   letter-spacing: -3px;
   line-height: 0.9;
   margin: 0;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 32px;
+  }
 }
 
 .loginButton {

@@ -13,6 +13,10 @@
     font-weight: 400;
     margin: 15px 0;
     text-align: left;
+
+    @media screen and (max-width: $phone-wide) {
+      font-size: 28px;
+    }
   }
 
   .loginContainer {
@@ -24,6 +28,17 @@
     justify-content: center;
     margin-bottom: 10px;
     width: 500px;
+
+    @media screen and (max-width: $phone-wide) {
+      padding: 0 10px;
+      width: 300px;
+
+      form {
+        input {
+          width: 200px;
+        }
+      }
+    }
 
     .innerLoginContainer {
       h6 {
@@ -39,6 +54,11 @@
         margin: 0;
         width: 358px;
 
+        @media screen and (max-width: $phone-wide) {
+          flex-flow: column;
+          width: 200px;
+        }
+
         .forgotPasswordLink {
           color: $brand-light-blue;
           font-size: 14px;
@@ -48,25 +68,6 @@
 
           &:hover {
             text-decoration: underline;
-          }
-        }
-
-        .loginButton {
-          background-color: $brand-blue;
-          border: 1px solid $brand-blue;
-          border-radius: 5px;
-          color: $brand-white;
-          cursor: pointer;
-          font-family: "Raleway", sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-          margin: 10px 0;
-          padding: 10px 25px;
-          transition: all 0.4s;
-
-          &:hover {
-            background-color: $brand-white;
-            color: $brand-blue;
           }
         }
       }

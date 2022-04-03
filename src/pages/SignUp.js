@@ -19,7 +19,6 @@ const SignUp = () => {
   const signUp = async (e) => {
     e.preventDefault();
     const signUpResponse = await signUpUser(formValues);
-    console.log(signUpResponse);
     if (signUpResponse.isError) {
       return setError(signUpResponse.message);
     }
@@ -27,6 +26,7 @@ const SignUp = () => {
     setError("");
     setFormValues({ ...formValues, password: "" });
   };
+
   const confirmSignUp = async (e) => {
     e.preventDefault();
     const confirmResponse = await confirmUserSignUp({
@@ -40,6 +40,7 @@ const SignUp = () => {
     setError("");
     navigate("/login");
   };
+
   const resendCode = async (e) => {
     e.preventDefault();
     const codeResponse = await resendUserCode(formValues.email);

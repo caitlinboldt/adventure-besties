@@ -47,7 +47,7 @@ export default function ForgotPassword() {
         <h3>Forgot password</h3>
         <div className={styles.forgotPasswordContainer}>
           <div className={styles.innerForgotPasswordContainer}>
-            <h6>Receive a code to reset your email</h6>
+            <h6>Receive a code to reset your password</h6>
             {error && <p className={styles.errorText}>Error: {error}</p>}
             {!waitingForCode && (
               <form>
