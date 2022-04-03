@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { setUser } from "slices/user/userSlice";
 import { cognitoLogin, mainLogin } from "api/login";
 import { useNavigate, Link } from "react-router-dom";
+import LottieAnimation from "components/LottieAnimation";
+import planeLottie from "animations/plane_lottie.json";
 import styles from "./scss/login.module.scss";
 
 const initialFormState = {
@@ -44,7 +46,11 @@ export default function Login() {
 
   return (
     <div className={styles.mainContainer}>
-      <div>
+      <div className={styles.mainInnerContainer}>
+        <LottieAnimation
+          style={styles.lottieHeartbeat}
+          animationData={planeLottie}
+        />
         <h3>Adventure Besties for life</h3>
         <div className={styles.loginContainer}>
           <div className={styles.innerLoginContainer}>

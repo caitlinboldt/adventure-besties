@@ -60,7 +60,7 @@ const SignUp = () => {
         <h3>Ready to plan your adventures?</h3>
         <div className={styles.signUpContainer}>
           <div className={styles.innerSignUpContainer}>
-            <h6>Sign up for free with Adventure Besties</h6>
+            <h6>Sign up with Adventure Besties</h6>
             {error && <p className={styles.errorText}>Error: {error}</p>}
             {!waitingForCode && (
               <form>
