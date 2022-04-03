@@ -1,0 +1,35 @@
+@import "core-scss/index.scss";
+
+.headerContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    height: 50px;
+    padding: 5px 15px;
+  }
+
+  .headerLinks {
+    padding: 5px 15px;
+
+    .logoutButton {
+      a {
+        background-color: $brand-blue;
+        border: 1px solid $brand-blue;
+        border-radius: 5px;
+        color: $brand-white;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 25px;
+        text-decoration: none;
+        transition: all 0.4s;
+
+        &:hover {
+          background-color: $brand-white;
+          color: $brand-blue;
+        }
+      }
+    }
+  }
+}

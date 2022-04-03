@@ -1,17 +1,15 @@
-import { Link } from "react-router-dom";
-import largeLogo from "Adventure-Besties-large-logo.png";
-import styles from "./scss/landing.module.scss";
+import Header from "components/Header";
+import Footer from "components/Footer";
+import styles from "./scss/homepage.module.scss";
 
 export default function Homepage() {
   return (
-    <div className={styles.landing}>
-      <header className={styles.landingHeader}>
-        <img src={largeLogo} className={styles.logo} alt="Butterfly hand" />
-      </header>
-      <h1 className={styles.landingTitle}>Adventure Besties</h1>
-      <Link className={styles.brandBlueLink} to="/logout">
-        Logout
-      </Link>
-    </div>
+    <>
+      <Header />
+      <div className={styles.homepage}>
+        <p>Future homepage</p>
+      </div>
+      <Footer />
+    </>
   );
 }
