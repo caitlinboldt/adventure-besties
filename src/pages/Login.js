@@ -5,6 +5,7 @@ import { cognitoLogin, mainLogin } from "api/login";
 import { useNavigate, Link } from "react-router-dom";
 import LottieAnimation from "components/LottieAnimation";
 import planeLottie from "animations/plane_lottie.json";
+import Loader from "components/Loader";
 import styles from "./scss/login.module.scss";
 
 const initialFormState = {
@@ -17,6 +18,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState(initialFormState);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const clearForm = () => {
     setFormValues(initialFormState);
@@ -25,8 +27,9 @@ export default function Login() {
 
   const logIn = async (e) => {
     e.preventDefault();
-    const cognitoResponse = await cognitoLogin(formValues);
+    setIsLoading(true);
     clearForm();
+    const cognitoResponse = await cognitoLogin(formValues);
 
     if (cognitoResponse.isError) {
       return setError(cognitoResponse.message);
@@ -37,12 +40,17 @@ export default function Login() {
       return setError(loginResponse.message);
     }
     dispatch(setUser(loginResponse));
+    setIsLoading(false);
     navigate("/homepage");
   };
 
   const handleInput = ({ target: { name, value } }) => {
     setFormValues({ ...formValues, [name]: value });
   };
+
+  if (isLoading && !error) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.mainContainer}>

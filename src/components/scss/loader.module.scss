@@ -1,0 +1,14 @@
+@import "core-scss/index.scss";
+
+.loaderContainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  .loadingLottie {
+    div {
+      height: 300px;
+    }
+  }
+}
