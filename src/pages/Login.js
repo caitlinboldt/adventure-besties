@@ -48,7 +48,7 @@ export default function Login() {
     <div className={styles.mainContainer}>
       <div className={styles.mainInnerContainer}>
         <LottieAnimation
-          style={styles.lottieHeartbeat}
+          style={styles.lottiePlane}
           animationData={planeLottie}
         />
         <h3>Adventure Besties for life</h3>

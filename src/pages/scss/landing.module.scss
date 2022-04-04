@@ -6,66 +6,106 @@
   text-align: center;
 }
 
-.logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .landingHeader {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
   justify-content: center;
-  min-height: 55vh;
-}
+  height: 100px;
 
-.landingTitle {
-  color: $brand-blue;
-  font-family: "Overpass", sans-serif;
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: -3px;
-  line-height: 0.9;
-  margin: 0;
+  h1 {
+    color: $brand-black;
+    font-size: 40px;
+    font-weight: 200;
 
-  @media screen and (max-width: $tablet) {
-    font-size: 32px;
-  }
-}
-
-.loginButton {
-  margin-top: 35px;
-
-  a {
-    background-color: $brand-blue;
-    border: 1px solid $brand-blue;
-    border-radius: 5px;
-    color: $brand-white;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 25px;
-    text-decoration: none;
-    transition: all 0.4s;
-
-    &:hover {
-      background-color: $brand-white;
-      color: $brand-blue;
+    @media screen and (max-width: $phone-wide) {
+      font-size: 32px;
     }
   }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.landingMainContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: $phone-wide) {
+    flex-flow: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .landingMainImage {
+    background: url("../../assets/IMG_6778.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    @media screen and (max-width: $phone-wide) {
+      display: none;
+    }
+  }
+
+  .landingLoginContainer {
+    align-items: center;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-flow: column;
+    height: 90vh;
+    justify-content: center;
+    width: 100%;
+
+    @media screen and (max-height: 576px) {
+      padding-bottom: 100px;
+    }
+
+    @media screen and (min-height: 1000px) {
+      height: 100vh;
+    }
+
+    .landingLoginContent {
+      margin-bottom: 50px;
+
+      .globe {
+        height: 340px;
+
+        div {
+          height: 400px;
+        }
+      }
+
+      h3 {
+        color: $brand-black;
+        display: inline;
+        font-family: "Overpass", sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        margin: 15px 0;
+        text-align: left;
+
+        @media screen and (max-width: $tablet) {
+          font-size: 24px;
+        }
+      }
+
+      .loginButton {
+        margin-top: 20px;
+
+        a {
+          background-color: $brand-blue;
+          border: 1px solid $brand-blue;
+          border-radius: 5px;
+          color: $brand-white;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 8px 25px;
+          text-decoration: none;
+          transition: all 0.4s;
+
+          &:hover {
+            background-color: $brand-white;
+            color: $brand-blue;
+          }
+        }
+      }
+    }
   }
 }
