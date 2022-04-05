@@ -1,9 +1,15 @@
 @import "core-scss/index.scss";
 
 .headerContainer {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+
+  .innerHeaderContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 
   .logo {
     height: 65px;

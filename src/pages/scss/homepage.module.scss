@@ -2,5 +2,51 @@
 
 .homepage {
   height: 80vh;
-  text-align: center;
+
+  .introContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 100%;
+
+    .innerIntroContent {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      margin-top: 35px;
+
+      @media screen and (max-width: $tablet) {
+        flex-flow: column;
+      }
+
+      div {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .introPhoto {
+        height: 400px;
+      }
+
+      .addATrip {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: column;
+      }
+
+      h6 {
+        color: $brand-black;
+        display: inline;
+        font-family: "Overpass", sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 5px 0;
+        text-align: left;
+      }
+    }
+  }
 }
