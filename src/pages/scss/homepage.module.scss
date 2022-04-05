@@ -1,7 +1,7 @@
 @import "core-scss/index.scss";
 
 .homepage {
-  height: 80vh;
+  height: 100vh;
 
   .introContainer {
     align-items: center;
@@ -25,17 +25,36 @@
         align-items: center;
         display: flex;
         justify-content: center;
+        padding: 20px;
         width: 100%;
       }
 
       .introPhoto {
         height: 400px;
+
+        @media screen and (max-width: $midpoint) {
+          height: 300px;
+        }
+
+        @media screen and (max-width: $phone-wide) {
+          height: 200px;
+        }
       }
 
       .addATrip {
         align-items: flex-start;
         display: flex;
         flex-flow: column;
+
+        @media screen and (max-width: $tablet) {
+          align-items: center;
+          padding: 25px 0;
+        }
+
+        @media screen and (max-width: $phone) {
+          align-items: flex-start;
+          padding: 25px;
+        }
       }
 
       h6 {

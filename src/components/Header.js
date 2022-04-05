@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "assets/logo.png";
 import styles from "./scss/header.module.scss";
+import LottieAnimation from "./LottieAnimation";
+import mobileIcon from "animations/mobile_header.json";
 
 export default function Header() {
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const toggle = () => {
+    setIsOpenDropdown(!isOpenDropdown);
+  };
+
   return (
-    <div className={styles.headerContainer}>
+    <nav className={styles.headerContainer}>
       <div className={styles.innerHeaderContainer}>
         <Link to="/homepage">
           <img
@@ -14,12 +21,24 @@ export default function Header() {
             alt="Adventure Besties logo"
           />
         </Link>
-        <div className={styles.headerLinks}>
+        <div
+          className={
+            isOpenDropdown
+              ? `${styles.headerLinks} ${styles.openDropdown}`
+              : styles.headerLinks
+          }
+        >
           <div className={styles.logoutButton}>
             <Link to="/logout">Log out</Link>
           </div>
         </div>
       </div>
-    </div>
+      <button onClick={toggle} className={styles.mobile}>
+        <LottieAnimation
+          style={styles.mobileLottie}
+          animationData={mobileIcon}
+        />
+      </button>
+    </nav>
   );
 }
