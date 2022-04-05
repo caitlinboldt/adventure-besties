@@ -1,0 +1,18 @@
+@import "core-scss/index.scss";
+
+.mainContainer {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  .notFoundLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    @media screen and (max-width: $phone-wide) {
+      justify-content: center;
+    }
+  }
+}

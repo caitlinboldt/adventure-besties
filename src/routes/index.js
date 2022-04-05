@@ -5,6 +5,7 @@ import { publicRoutes } from "./public";
 import { protectedRoutes } from "./protected";
 import Landing from "pages/Landing";
 import Logout from "pages/Logout";
+import NotFound from "pages/NotFound";
 import { isEmpty } from "lodash";
 
 export const AppRoutes = () => {
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
   const commonRoutes = [
     { path: "/", element: <Landing /> },
     { path: "/logout", element: <Logout /> },
+    { path: "*", element: <NotFound /> },
   ];
   const routes = isEmpty(user) ? publicRoutes : protectedRoutes;
   const element = useRoutes([...routes, ...commonRoutes]);
