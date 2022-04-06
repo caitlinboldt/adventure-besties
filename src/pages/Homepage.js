@@ -1,5 +1,8 @@
+import React from "react";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import AddAnAdventure from "components/AddAnAdventure";
+import AdventureGallery from "components/AdventureGallery";
 import brookingsPhoto from "assets/IMG_5769.jpg";
 import styles from "./scss/homepage.module.scss";
 
@@ -17,12 +20,10 @@ export default function Homepage() {
                 alt="Brookings, Oregon at sunset"
               />
             </div>
-            <div className={styles.addATrip}>
-              <h6>Ready to adventure with a bestie?</h6>
-              <button className={styles.brandBlueButton}>Add a trip</button>
-            </div>
+            <AddAnAdventure />
           </div>
         </div>
+        <AdventureGallery />
       </div>
       <Footer />
     </>

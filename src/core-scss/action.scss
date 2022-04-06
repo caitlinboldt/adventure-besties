@@ -17,6 +17,25 @@
   }
 }
 
+.brandWhiteButton {
+  background-color: $brand-white;
+  border: 1px solid $brand-blue;
+  border-radius: 5px;
+  color: $brand-blue;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px 0;
+  padding: 10px 25px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: $brand-blue;
+    color: $brand-white;
+  }
+}
+
 .brandBlueLink {
   color: $brand-light-blue;
   font-size: 16px;

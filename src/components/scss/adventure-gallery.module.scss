@@ -1,0 +1,91 @@
+@import "core-scss/index.scss";
+
+.galleryContainer {
+  background-color: #fff3f3;
+  margin: 40px 0 0 0;
+  padding: 50px 15px;
+
+  .adventures {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    max-width: 1600px;
+
+    h3 {
+      color: $brand-black;
+      font-family: "Overpass", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      margin: 15px 0;
+      text-align: left;
+
+      @media screen and (max-width: $phone-wide) {
+        font-size: 28px;
+      }
+    }
+
+    .adventureContainer {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+
+      .adventureCard {
+        background-color: $brand-white;
+        border: 1px solid $brand-black;
+        border-radius: 5px;
+        min-height: 300px;
+        margin: 20px;
+        width: 300px;
+
+        .cardImageSection {
+          background-color: $brand-light-blue;
+          height: 150px;
+        }
+
+        .cardSection {
+          height: 150px;
+          padding: 20px;
+        }
+
+        h6 {
+          color: $brand-black;
+          font-family: "Overpass", sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          margin: 15px 0 5px 0;
+          text-align: left;
+        }
+
+        p {
+          color: $brand-black;
+          font-family: "Raleway", sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          margin: 5px 0;
+          text-align: left;
+        }
+
+        .editButton {
+          margin-top: 20px;
+
+          a {
+            background-color: $brand-blue;
+            border: 1px solid $brand-blue;
+            border-radius: 5px;
+            color: $brand-white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 25px;
+            text-decoration: none;
+            transition: all 0.4s;
+
+            &:hover {
+              background-color: $brand-white;
+              color: $brand-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

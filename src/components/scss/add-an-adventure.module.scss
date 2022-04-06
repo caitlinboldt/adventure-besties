@@ -1,0 +1,74 @@
+@import "core-scss/index.scss";
+
+.addAnAdventureContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    align-items: center;
+    padding: 25px 0;
+  }
+
+  @media screen and (max-width: $phone) {
+    align-items: flex-start;
+    padding: 25px 0 25px 30px;
+  }
+
+  h6 {
+    color: $brand-black;
+    display: inline;
+    font-family: "Overpass", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 5px 0;
+    text-align: left;
+  }
+
+  .datePickerLabels {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+    width: 100%;
+
+    label {
+      align-items: flex-end;
+      color: $brand-black;
+      display: flex;
+
+      img {
+        height: 20px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .datePicker {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+
+    input:nth-child(1) {
+      margin-right: 22px;
+    }
+
+    input {
+      height: 40px;
+      width: 90%;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+
+    button {
+      margin-right: 5px;
+    }
+  }
+}
