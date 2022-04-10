@@ -3,6 +3,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import AddAnAdventure from "components/AddAnAdventure";
 import AdventureGallery from "components/AdventureGallery";
+import Calendar from "components/Calendar";
 import brookingsPhoto from "assets/IMG_5769.jpg";
 import styles from "./scss/homepage.module.scss";
 
@@ -24,6 +25,9 @@ export default function Homepage() {
           </div>
         </div>
         <AdventureGallery />
+        <div className={styles.calendarContainer}>
+          <Calendar />
+        </div>
       </div>
       <Footer />
     </>
