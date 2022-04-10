@@ -41,10 +41,20 @@
   }
 
   .headerLinks {
+    display: flex;
+    flex-flow: row;
     padding: 0 15px 5px 15px;
 
     @media screen and (max-width: $tablet) {
       display: none;
+    }
+
+    a {
+      margin-left: 50px;
+
+      @media screen and (max-width: $tablet) {
+        margin-left: 0;
+      }
     }
 
     .logoutButton {
@@ -70,13 +80,14 @@
   .headerLinks.openDropdown {
     background-color: $brand-white;
     display: block;
-    height: 100px;
+    height: 90px;
+    padding: 20px;
     position: absolute;
     top: 90px;
     width: 100%;
 
     .logoutButton {
-      margin-top: 40px;
+      margin-top: 30px;
     }
   }
 }

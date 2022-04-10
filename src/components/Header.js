@@ -28,6 +28,9 @@ export default function Header() {
               : styles.headerLinks
           }
         >
+          <Link className={styles.brandBlueLink} to="/homepage">
+            Home
+          </Link>
           <div className={styles.logoutButton}>
             <Link to="/logout">Log out</Link>
           </div>

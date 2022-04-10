@@ -33,7 +33,9 @@ export default function AddAnAdventure() {
                   <h6>{adventure.title}</h6>
                   <p>{adventure.description}</p>
                   <div className={styles.editButton}>
-                    <Link to="/homepage">View adventure</Link>
+                    <Link to={`/adventure/${adventure._id}`}>
+                      View adventure
+                    </Link>
                   </div>
                 </div>
               </div>
