@@ -27,6 +27,30 @@
     text-align: left;
   }
 
+  .fileInput {
+    height: 50px;
+    padding: 0;
+
+    &.fileInput::-webkit-file-upload-button {
+      background-color: $brand-blue;
+      border: 1px solid $brand-blue;
+      border-radius: 5px;
+      color: $brand-white;
+      cursor: pointer;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 10px 10px 10px 0;
+      padding: 10px 25px;
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: $brand-white;
+        color: $brand-blue;
+      }
+    }
+  }
+
   .datePickerLabels {
     display: grid;
     gap: 10px;

@@ -28,7 +28,15 @@ export default function AddAnAdventure() {
           <div className={styles.adventureContainer}>
             {adventures.map((adventure) => (
               <div key={adventure._id} className={styles.adventureCard}>
-                <div className={styles.cardImageSection}></div>
+                <div
+                  className={`${styles.cardImageSection} ${
+                    adventure.image_url ? styles.withPhoto : ""
+                  }`}
+                >
+                  {adventure.image_url && (
+                    <img src={adventure.image_url} alt={adventure.title} />
+                  )}
+                </div>
                 <div className={styles.cardSection}>
                   <h6>{adventure.title}</h6>
                   <p>{adventure.description}</p>

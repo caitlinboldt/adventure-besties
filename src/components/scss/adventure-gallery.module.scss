@@ -33,17 +33,30 @@
         background-color: $brand-white;
         border: 1px solid $brand-black;
         border-radius: 5px;
-        min-height: 300px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
         margin: 20px;
+        min-height: 300px;
         width: 300px;
 
         .cardImageSection {
           background-color: $brand-light-blue;
-          height: 150px;
+          min-height: 150px;
+
+          &.withPhoto {
+            background-color: transparent;
+          }
+
+          img {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 100%;
+          }
         }
 
         .cardSection {
-          height: 150px;
+          min-height: 150px;
           padding: 20px;
         }
 

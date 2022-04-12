@@ -45,6 +45,7 @@
       }
 
       > div {
+        align-items: center;
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -53,7 +54,7 @@
       }
 
       .introPhoto {
-        height: 400px;
+        max-width: 400px;
         padding: 20px;
 
         @media screen and (max-width: $midpoint) {

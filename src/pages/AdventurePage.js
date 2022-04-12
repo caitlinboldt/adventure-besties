@@ -34,7 +34,11 @@ export default function AdventurePage() {
                 <p>{adventure.description}</p>
               </div>
               <div>
-                <img className={styles.introPhoto} src="" alt="" />
+                <img
+                  className={styles.introPhoto}
+                  src={adventure.image_url}
+                  alt={adventure.title}
+                />
               </div>
             </div>
           </div>

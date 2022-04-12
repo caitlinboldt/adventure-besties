@@ -6,18 +6,26 @@ export async function addATrip({
   startDate,
   endDate,
   userId,
+  image,
 }) {
-  const trip = {
-    title,
-    description,
-    start_date: startDate,
-    end_date: endDate,
-    users: [userId],
-  };
   try {
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("start_date", startDate);
+    formData.append("end_date", endDate);
+    formData.append("user", userId);
+
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
     const response = await axios.post(
       `${process.env.REACT_APP_API_ENDPOINT}/trip`,
-      trip
+      formData,
+      config
     );
     return response.data;
   } catch (error) {

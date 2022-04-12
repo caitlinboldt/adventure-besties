@@ -12,6 +12,7 @@ const initialFormState = {
   description: "",
   startDate: new Date(),
   endDate: new Date(),
+  image: null,
 };
 
 export default function AddAnAdventure() {
@@ -71,6 +72,14 @@ export default function AddAnAdventure() {
               value={formValues.description}
               onChange={handleInput}
               placeholder="Description"
+            />
+            <input
+              type="file"
+              className={styles.fileInput}
+              onChange={(e) =>
+                setFormValues({ ...formValues, image: e.target.files[0] })
+              }
+              name="image"
             />
             <div className={styles.datePickerLabels}>
               <label>
