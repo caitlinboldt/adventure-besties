@@ -64,7 +64,6 @@ const EditAdventure = ({ adventure, setAdventure }) => {
 
   return isOpenForm ? (
     <div className={adventureStyles.adventureContainer}>
-      <h6>Edit adventure</h6>
       {error && <p className={styles.errorText}>{error}</p>}
       <form>
         <input
@@ -117,15 +116,17 @@ const EditAdventure = ({ adventure, setAdventure }) => {
     </div>
   ) : (
     <div className={styles.editAdventureContainer}>
-      <h6>{adventure.title}</h6>
-      <p>{adventure.description}</p>
       <div>
-        <button onClick={deleteAdventure} className={styles.brandWhiteButton}>
-          Delete adventure?
-        </button>
-        <button onClick={toggle} className={styles.brandBlueButton}>
-          Edit
-        </button>
+        <h6>{adventure.title}</h6>
+        <p>{adventure.description}</p>
+        <div>
+          <button onClick={deleteAdventure} className={styles.brandWhiteButton}>
+            Delete adventure?
+          </button>
+          <button onClick={toggle} className={styles.brandBlueButton}>
+            Edit
+          </button>
+        </div>
       </div>
     </div>
   );
