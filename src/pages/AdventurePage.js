@@ -4,6 +4,8 @@ import Footer from "components/Footer";
 import styles from "./scss/adventure-page.module.scss";
 import { useParams } from "react-router";
 import { getTrip } from "api/trip";
+import Loader from "components/Loader";
+import EditAdventure from "components/EditAdventure";
 
 export default function AdventurePage() {
   const [adventure, setAdventure] = useState({});
@@ -22,29 +24,26 @@ export default function AdventurePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    adventure && (
-      <>
-        <Header />
-        <div className={styles.adventurePage}>
-          <div className={styles.introContainer}>
-            <div className={styles.innerIntroContent}>
-              <div>
-                <h6>{adventure.title}</h6>
-                <p>{adventure.description}</p>
-              </div>
-              <div>
-                <img
-                  className={styles.introPhoto}
-                  src={adventure.image_url}
-                  alt={adventure.title}
-                />
-              </div>
+  return adventure ? (
+    <>
+      <Header />
+      <div className={styles.adventurePage}>
+        <div className={styles.introContainer}>
+          <div className={styles.innerIntroContent}>
+            <EditAdventure adventure={adventure} setAdventure={setAdventure} />
+            <div>
+              <img
+                className={styles.introPhoto}
+                src={adventure.image_url}
+                alt={adventure.title}
+              />
             </div>
           </div>
         </div>
-        <Footer />
-      </>
-    )
+      </div>
+      <Footer />
+    </>
+  ) : (
+    <Loader />
   );
 }

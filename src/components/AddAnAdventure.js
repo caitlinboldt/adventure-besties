@@ -53,7 +53,7 @@ export default function AddAnAdventure() {
   return (
     <div>
       {isOpenForm ? (
-        <div className={styles.addAnAdventureContainer}>
+        <div className={styles.adventureContainer}>
           <h6>Add an adventure</h6>
           {error && <p className={styles.errorText}>{error}</p>}
           <form>
@@ -114,7 +114,7 @@ export default function AddAnAdventure() {
           </form>
         </div>
       ) : (
-        <div className={styles.addAnAdventureContainer}>
+        <div className={styles.adventureContainer}>
           <h6>Ready to adventure with a bestie?</h6>
           <button onClick={toggle} className={styles.brandBlueButton}>
             Add an adventure

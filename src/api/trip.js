@@ -33,6 +33,29 @@ export async function addATrip({
   }
 }
 
+export async function editTrip({ data, tripId }) {
+  try {
+    const response = await axios.patch(
+      `${process.env.REACT_APP_API_ENDPOINT}/trip/${tripId}`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    return { isError: true, message: error.message };
+  }
+}
+
+export async function deleteTrip({ tripId }) {
+  try {
+    const response = await axios.delete(
+      `${process.env.REACT_APP_API_ENDPOINT}/trip/${tripId}`
+    );
+    return response.data;
+  } catch (error) {
+    return { isError: true, message: error.message };
+  }
+}
+
 export async function getTripGallery({ userId }) {
   try {
     const response = await axios.get(
