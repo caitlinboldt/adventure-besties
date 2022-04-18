@@ -31,6 +31,9 @@ export default function Header() {
           <Link className={styles.brandBlueLink} to="/homepage">
             Home
           </Link>
+          <Link className={styles.brandBlueLink} to="/profile">
+            Profile
+          </Link>
           <div className={styles.logoutButton}>
             <Link to="/logout">Log out</Link>
           </div>
