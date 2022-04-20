@@ -52,7 +52,6 @@ const EditAdventure = ({ adventure, setAdventure }) => {
     const tripResponse = await editTrip({
       data: formValues,
       tripId: adventure._id,
-      isMainDetails: true,
     });
 
     if (tripResponse.isError) {

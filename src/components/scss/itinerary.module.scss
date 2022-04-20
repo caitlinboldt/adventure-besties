@@ -1,0 +1,132 @@
+@import "core-scss/index.scss";
+
+.itenitaryContainer {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin: 30px auto;
+  max-width: 1600px;
+  width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    flex-flow: column;
+  }
+
+  .titleContainer {
+    display: flex;
+    flex-flow: row;
+    margin: 10px 0 10px 25px;
+
+    @media screen and (max-width: $tablet) {
+      flex-flow: column;
+    }
+
+    h6 {
+      color: $brand-black;
+      display: inline;
+      font-family: "Overpass", sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 15px 10px 0 0;
+      text-align: left;
+
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .buttonContainer {
+      display: flex;
+      flex-flow: column;
+
+      button {
+        margin: 0 0 10px 0;
+        max-width: 99px;
+      }
+    }
+
+    .brandBlueButton {
+      max-height: 38px;
+    }
+  }
+
+  form {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    margin: 0 0 0 50px;
+
+    @media screen and (max-width: $tablet) {
+      margin: 10px 0 0 0;
+    }
+
+    .datePickerLabels {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 10px;
+      width: 100%;
+
+      label {
+        align-items: flex-end;
+        color: $brand-black;
+        display: flex;
+
+        img {
+          height: 20px;
+          padding-right: 5px;
+        }
+      }
+    }
+
+    .datePicker {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
+
+      input:nth-child(1) {
+        margin-right: 22px;
+      }
+
+      input {
+        height: 40px;
+        width: 90%;
+      }
+    }
+
+    .textareaContainer {
+      display: flex;
+      flex-flow: column;
+      margin-left: 20px;
+
+      label {
+        color: $brand-black;
+      }
+
+      textarea {
+        color: $brand-black;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        height: 50px;
+        width: 500px;
+
+        @media screen and (max-width: $laptop) {
+          margin-right: 10px;
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .dayContainer {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 40px 0;
+
+    .dayCard {
+      margin: 30px 10px;
+      width: 600px;
+    }
+  }
+}

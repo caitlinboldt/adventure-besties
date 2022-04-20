@@ -45,6 +45,30 @@ export async function editTrip({ data, tripId }) {
   }
 }
 
+export async function editTripAdd({ data, tripId, property }) {
+  try {
+    const response = await axios.patch(
+      `${process.env.REACT_APP_API_ENDPOINT}/trip/${tripId}/add/${property}`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    return { isError: true, message: error.message };
+  }
+}
+
+export async function editTripRemove({ itemId, tripId, property }) {
+  try {
+    const response = await axios.patch(
+      `${process.env.REACT_APP_API_ENDPOINT}/trip/${tripId}/remove/${property}`,
+      { itemId }
+    );
+    return response.data;
+  } catch (error) {
+    return { isError: true, message: error.message };
+  }
+}
+
 export async function deleteTrip({ tripId }) {
   try {
     const response = await axios.delete(
