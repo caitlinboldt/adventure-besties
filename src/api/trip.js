@@ -101,3 +101,15 @@ export async function getTrip({ tripId }) {
     return { isError: true, message: error.message };
   }
 }
+
+export async function addABestie({ data }) {
+  try {
+    const response = await axios.patch(
+      `${process.env.REACT_APP_API_ENDPOINT}/trip/new/addUser`,
+      data
+    );
+    return response.data;
+  } catch (error) {
+    return { isError: true, message: error.message };
+  }
+}

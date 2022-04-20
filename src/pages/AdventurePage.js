@@ -7,6 +7,7 @@ import { getTrip } from "api/trip";
 import Loader from "components/Loader";
 import EditAdventure from "components/EditAdventure";
 import Itinerary from "components/Itinerary";
+import AddABestie from "components/AddABestie";
 
 export default function AdventurePage() {
   const [adventure, setAdventure] = useState({});
@@ -42,6 +43,7 @@ export default function AdventurePage() {
           </div>
         </div>
         <Itinerary adventure={adventure} setAdventure={setAdventure} />
+        <AddABestie adventure={adventure} setAdventure={setAdventure} />
       </div>
       <Footer />
     </>

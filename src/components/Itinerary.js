@@ -114,7 +114,7 @@ const Itinerary = ({ adventure, setAdventure }) => {
               <p>{day.details}</p>
               <button
                 onClick={() => removeDay(day._id)}
-                className={styles.brandBlueButton}
+                className={styles.cancelButton}
               >
                 Delete
               </button>

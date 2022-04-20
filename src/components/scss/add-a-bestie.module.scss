@@ -1,0 +1,40 @@
+@import "core-scss/index.scss";
+
+.addABestieContainer {
+  background-color: #fff3f3;
+  margin: 40px 0 0 0;
+  padding: 25px 15px;
+
+  .addABestieInnerContainer {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1600px;
+
+    h6 {
+      color: $brand-black;
+      display: inline;
+      font-family: "Overpass", sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 5px 15px;
+      text-align: left;
+    }
+
+    form {
+      align-items: center;
+      display: flex;
+      flex-flow: row;
+
+      .brandBlueButton {
+        margin-left: 20px;
+      }
+
+      .brandWhiteButton {
+        margin-left: 10px;
+      }
+    }
+  }
+}
