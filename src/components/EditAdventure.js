@@ -119,11 +119,11 @@ const EditAdventure = ({ adventure, setAdventure }) => {
         <h6>{adventure.title}</h6>
         <p>{adventure.description}</p>
         <div>
-          <button onClick={deleteAdventure} className={styles.cancelButton}>
-            Delete adventure?
-          </button>
           <button onClick={toggle} className={styles.brandBlueButton}>
             Edit
+          </button>
+          <button onClick={deleteAdventure} className={styles.cancelButton}>
+            Delete adventure
           </button>
         </div>
       </div>

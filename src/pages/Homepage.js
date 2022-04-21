@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getTripGallery } from "api/trip";
+import { useSelector } from "react-redux";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import AddAnAdventure from "components/AddAnAdventure";
@@ -8,6 +10,21 @@ import brookingsPhoto from "assets/IMG_5769.jpg";
 import styles from "./scss/homepage.module.scss";
 
 export default function Homepage() {
+  const user = useSelector((state) => state.userInfo.user);
+  const [adventures, setAdventures] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const tripResponse = await getTripGallery({ userId: user._id });
+
+      if (tripResponse.isError) {
+        console.error(tripResponse.message);
+      } else {
+        setAdventures(tripResponse);
+      }
+    })();
+  }, [user]);
+
   return (
     <>
       <Header />
@@ -24,9 +41,9 @@ export default function Homepage() {
             <AddAnAdventure />
           </div>
         </div>
-        <AdventureGallery />
+        <AdventureGallery adventures={adventures} />
         <div className={styles.calendarContainer}>
-          <Calendar />
+          <Calendar adventures={adventures} />
         </div>
       </div>
       <Footer />

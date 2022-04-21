@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { getTripGallery } from "api/trip";
-import { useSelector } from "react-redux";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./scss/adventure-gallery.module.scss";
 
-export default function AddAnAdventure() {
-  const user = useSelector((state) => state.userInfo.user);
-  const [adventures, setAdventures] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const tripResponse = await getTripGallery({ userId: user._id });
-
-      if (tripResponse.isError) {
-        console.error(tripResponse.message);
-      } else {
-        setAdventures(tripResponse);
-      }
-    })();
-  }, [user]);
-
+export default function AddAnAdventure({ adventures }) {
   return (
     !!adventures.length && (
       <div className={styles.galleryContainer}>
