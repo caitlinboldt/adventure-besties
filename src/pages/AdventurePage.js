@@ -8,6 +8,7 @@ import Loader from "components/Loader";
 import EditAdventure from "components/EditAdventure";
 import Itinerary from "components/Itinerary";
 import AddABestie from "components/AddABestie";
+import AddFlightsCarsLodging from "components/AddFlightsCarsLodging";
 
 export default function AdventurePage() {
   const [adventure, setAdventure] = useState({});
@@ -44,6 +45,10 @@ export default function AdventurePage() {
         </div>
         <Itinerary adventure={adventure} setAdventure={setAdventure} />
         <AddABestie adventure={adventure} setAdventure={setAdventure} />
+        <AddFlightsCarsLodging
+          adventure={adventure}
+          setAdventure={setAdventure}
+        />
       </div>
       <Footer />
     </>

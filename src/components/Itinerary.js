@@ -99,7 +99,7 @@ const Itinerary = ({ adventure, setAdventure }) => {
                 <label>Details</label>
                 <textarea
                   name="details"
-                  id="adventure-description"
+                  id="details"
                   value={formValues.details}
                   onChange={handleInput}
                 />
