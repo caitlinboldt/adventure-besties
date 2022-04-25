@@ -10,6 +10,7 @@ import Itinerary from "components/Itinerary";
 import AddABestie from "components/AddABestie";
 import AddFlightsCarsLodging from "components/AddFlightsCarsLodging";
 import FlightsCarsLodgingGallery from "components/FlightsCarsLodgingGallery";
+import TotalEstimatedCost from "components/TotalEstimatedCost";
 
 export default function AdventurePage() {
   const [adventure, setAdventure] = useState({});
@@ -54,6 +55,7 @@ export default function AdventurePage() {
           adventure={adventure}
           setAdventure={setAdventure}
         />
+        <TotalEstimatedCost adventure={adventure} />
       </div>
       <Footer />
     </>
