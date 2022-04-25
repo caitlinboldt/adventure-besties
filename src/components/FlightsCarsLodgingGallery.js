@@ -30,6 +30,10 @@ const FlightsCarsLodgingGallery = ({ adventure, setAdventure }) => {
     }
   };
 
+  const cropURL = (url) => {
+    return `${url.slice(0, 38)}..`;
+  };
+
   useEffect(() => {
     const combineFlightsCarsLodging = [
       ...(adventure.lodging || []),
@@ -107,12 +111,12 @@ const FlightsCarsLodgingGallery = ({ adventure, setAdventure }) => {
                     href={formatURL(type.website_url)}
                     className={styles.brandBlueLink}
                   >
-                    {type.website_url}
+                    {cropURL(type.website_url)}
                   </a>
                   <p className={styles.time}>
-                    {`Arrive: ${format(new Date(type.start_date), "PPpp")}`}
+                    {`Arrive: ${format(new Date(type.start_date), "PP")}`}
                     <br />
-                    {`Leave: ${format(new Date(type.end_date), "PPpp")}`}
+                    {`Leave: ${format(new Date(type.end_date), "PP")}`}
                   </p>
                   <p>{`${type.nights} nights`}</p>
                   <p>{`$${type.cost_per_night.toFixed(2)}`}</p>
