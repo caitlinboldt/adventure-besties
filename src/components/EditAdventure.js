@@ -6,6 +6,8 @@ import calendarIcon from "assets/calendar-icon.png";
 import styles from "./scss/edit-adventure.module.scss";
 import adventureStyles from "./scss/add-an-adventure.module.scss";
 import { editTrip, deleteTrip } from "api/trip";
+import { format } from "date-fns";
+import { isEmpty } from "lodash";
 
 const initialFormState = {
   title: "",
@@ -60,6 +62,10 @@ const EditAdventure = ({ adventure, setAdventure }) => {
     setAdventure(tripResponse.updatedTrip);
     toggle();
   };
+
+  if (isEmpty(adventure)) {
+    return null;
+  }
 
   return isOpenForm ? (
     <div className={adventureStyles.adventureContainer}>
@@ -116,7 +122,13 @@ const EditAdventure = ({ adventure, setAdventure }) => {
   ) : (
     <div className={styles.editAdventureContainer}>
       <div>
-        <h6>{adventure.title}</h6>
+        <h6>
+          {adventure.title}
+          <span>
+            {`${format(new Date(adventure?.start_date), "MMMM dd")} to
+            ${format(new Date(adventure?.end_date), "MMMM dd")}`}
+          </span>
+        </h6>
         <p>{adventure.description}</p>
         <div>
           <button onClick={toggle} className={styles.brandBlueButton}>

@@ -1,6 +1,12 @@
 @import "core-scss/index.scss";
 
 .editAdventureContainer {
+  span {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 15px;
+  }
   button {
     margin-right: 10px;
   }
