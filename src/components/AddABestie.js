@@ -19,6 +19,9 @@ const AddABestie = ({ adventure, setAdventure }) => {
 
   const send = async (e) => {
     e.preventDefault();
+    if (!email) {
+      return setError("Email is required");
+    }
     const tripResponse = await addABestie({
       data: { email, tripId: adventure._id },
     });

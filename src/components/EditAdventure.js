@@ -51,6 +51,9 @@ const EditAdventure = ({ adventure, setAdventure }) => {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (!formValues.title) {
+      return setError("Title is required");
+    }
     const tripResponse = await editTrip({
       data: formValues,
       tripId: adventure._id,
@@ -69,7 +72,7 @@ const EditAdventure = ({ adventure, setAdventure }) => {
 
   return isOpenForm ? (
     <div className={adventureStyles.adventureContainer}>
-      {error && <p className={styles.errorText}>{error}</p>}
+      {error && <p className={styles.errorText}>Error: {error}</p>}
       <form>
         <input
           name="title"

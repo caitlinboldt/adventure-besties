@@ -38,6 +38,9 @@ export default function AddAnAdventure() {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (!formValues.title) {
+      return setError("Title is required");
+    }
     const tripResponse = await addATrip({
       ...formValues,
       userId: user._id,
@@ -55,7 +58,7 @@ export default function AddAnAdventure() {
       {isOpenForm ? (
         <div className={styles.adventureContainer}>
           <h6>Add an adventure</h6>
-          {error && <p className={styles.errorText}>{error}</p>}
+          {error && <p className={styles.errorText}>Error: {error}</p>}
           <form>
             <input
               name="title"

@@ -13,6 +13,32 @@ const FlightsCarsLodgingForm = ({
 }) => {
   const [formValues, setFormValues] = useState({});
   const [error, setError] = useState("");
+  const requiredFields = {
+    flights: [
+      "airline",
+      "airport_from",
+      "airport_to",
+      "cost",
+      "departure_time",
+      "arrival_time",
+    ],
+    car_rental: [
+      "car_rental_name",
+      "car_type",
+      "days",
+      "cost",
+      "start_date",
+      "end_date",
+    ],
+    lodging: [
+      "lodging_type",
+      "location",
+      "cost_per_night",
+      "nights",
+      "start_date",
+      "end_date",
+    ],
+  };
 
   const clearForm = () => {
     setFormValues({});
@@ -22,6 +48,12 @@ const FlightsCarsLodgingForm = ({
 
   const submit = async (e) => {
     e.preventDefault();
+    const allRequiredFields = requiredFields[type].every(
+      (name) => formValues[name]
+    );
+    if (!allRequiredFields) {
+      return setError("All fields are required");
+    }
     const tripResponse = await editTripAdd({
       data: formValues,
       tripId: adventure._id,

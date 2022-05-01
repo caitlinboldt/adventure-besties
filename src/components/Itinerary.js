@@ -32,6 +32,9 @@ const Itinerary = ({ adventure, setAdventure }) => {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (!formValues.details) {
+      return setError("Details are required");
+    }
     const tripResponse = await editTripAdd({
       data: formValues,
       tripId: adventure._id,
