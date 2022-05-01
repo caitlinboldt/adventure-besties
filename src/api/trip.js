@@ -110,6 +110,6 @@ export async function addABestie({ data }) {
     );
     return response.data;
   } catch (error) {
-    return { isError: true, message: error.message };
+    return { isError: true, message: error.response.data.message };
   }
 }

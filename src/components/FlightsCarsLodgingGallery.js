@@ -31,7 +31,10 @@ const FlightsCarsLodgingGallery = ({ adventure, setAdventure }) => {
   };
 
   const cropURL = (url) => {
-    return `${url.slice(0, 38)}..`;
+    if (url.length > 38) {
+      return `${url.slice(0, 38)}...`;
+    }
+    return url;
   };
 
   useEffect(() => {

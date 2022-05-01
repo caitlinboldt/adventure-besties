@@ -66,9 +66,9 @@ const Itinerary = ({ adventure, setAdventure }) => {
       <div>
         <div className={styles.titleContainer}>
           <h6>Day to Day Itinerary</h6>
-          {error && <p className={styles.errorText}>Error: {error}</p>}
           {isOpenForm ? (
             <div className={styles.buttonContainer}>
+              {error && <p className={styles.errorText}>Error: {error}</p>}
               <button onClick={toggle} className={styles.brandWhiteButton}>
                 Cancel
               </button>

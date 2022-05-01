@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import styles from "./scss/adventure-gallery.module.scss";
 
 export default function AddAnAdventure({ adventures }) {
+  const cropDescription = (text) => {
+    if (text.length > 90) {
+      return `${text.slice(0, 90)}...`;
+    }
+    return text;
+  };
+
   return (
     !!adventures.length && (
       <div className={styles.galleryContainer}>
@@ -22,7 +29,7 @@ export default function AddAnAdventure({ adventures }) {
                 </div>
                 <div className={styles.cardSection}>
                   <h6>{adventure.title}</h6>
-                  <p>{adventure.description}</p>
+                  <p>{cropDescription(adventure.description)}</p>
                   <div className={styles.editButton}>
                     <Link to={`/adventure/${adventure._id}`}>
                       View adventure

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -21,6 +21,7 @@ const EditAdventure = ({ adventure, setAdventure }) => {
   const [formValues, setFormValues] = useState(initialFormState);
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [error, setError] = useState("");
+  const [besties, setBesties] = useState("");
 
   const clearForm = () => {
     setFormValues(initialFormState);
@@ -65,6 +66,14 @@ const EditAdventure = ({ adventure, setAdventure }) => {
     setAdventure(tripResponse.updatedTrip);
     toggle();
   };
+
+  useEffect(() => {
+    if (!adventure || !adventure.users) {
+      return;
+    }
+    const besties = adventure.users.map((user) => user.name);
+    setBesties(besties.join(", "));
+  }, [adventure]);
 
   if (isEmpty(adventure)) {
     return null;
@@ -132,7 +141,8 @@ const EditAdventure = ({ adventure, setAdventure }) => {
             ${format(new Date(adventure?.end_date), "MMMM dd")}`}
           </span>
         </h6>
-        <p>{adventure.description}</p>
+        <p className={styles.besties}>{besties}</p>
+        <p className={styles.description}>{adventure.description}</p>
         <div>
           <button onClick={toggle} className={styles.brandBlueButton}>
             Edit

@@ -1,6 +1,21 @@
 @import "core-scss/index.scss";
 
 .editAdventureContainer {
+  .besties {
+    color: $brand-blue;
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    padding: 0;
+  }
+  .description {
+    color: $brand-black;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 0;
+    max-width: 600px;
+    text-align: left;
+  }
   span {
     font-family: "Raleway", sans-serif;
     font-size: 20px;
