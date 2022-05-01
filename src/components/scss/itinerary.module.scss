@@ -48,6 +48,7 @@
 
     .brandBlueButton {
       max-height: 38px;
+      max-width: 140px;
     }
   }
 
@@ -58,6 +59,8 @@
     margin: 0 0 0 50px;
 
     @media screen and (max-width: $tablet) {
+      align-items: flex-start;
+      flex-flow: column;
       margin: 10px 0 0 0;
     }
 
@@ -128,6 +131,10 @@
     .dayCard {
       margin: 30px 10px;
       width: 600px;
+
+      @media screen and (max-width: $tablet) {
+        max-width: 250px;
+      }
     }
   }
 }

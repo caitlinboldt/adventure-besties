@@ -52,6 +52,10 @@
         justify-content: center;
         padding: 20px;
         width: 100%;
+
+        @media screen and (max-width: $phone-wide) {
+          width: auto;
+        }
       }
 
       .introPhoto {
@@ -67,7 +71,8 @@
         }
 
         @media screen and (max-width: $phone-wide) {
-          height: 200px;
+          height: auto;
+          max-width: 250px;
         }
       }
     }
