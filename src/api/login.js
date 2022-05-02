@@ -20,6 +20,11 @@ export async function mainLogin(cognitoUser) {
     email: cognitoUser.email,
     cognito_id: cognitoUser.sub,
     name: cognitoUser.name,
+    settings: {
+      show_full_name: true,
+      show_email: true,
+      allow_find_by_email: true,
+    },
   };
   try {
     const response = await axios.post(

@@ -71,7 +71,14 @@ const EditAdventure = ({ adventure, setAdventure }) => {
     if (!adventure || !adventure.users) {
       return;
     }
-    const besties = adventure.users.map((user) => user.name);
+    const besties = adventure.users.map((user) => {
+      if (user?.settings?.show_full_name === false) {
+        const username = user.name.includes(" ") && user.name?.split(" ")[0];
+        return username || user.name;
+      } else {
+        return user.name;
+      }
+    });
     setBesties(besties.join(", "));
   }, [adventure]);
 

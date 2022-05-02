@@ -90,4 +90,75 @@
       }
     }
   }
+
+  .settingsContainer {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1600px;
+    
+    .toggleContainer {
+      margin: 40px 0 0 100px;
+
+      h3 {
+        color: $brand-black;
+        font-family: "Overpass", sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        margin: 15px 0;
+        text-align: left;
+
+        @media screen and (max-width: $phone-wide) {
+          font-size: 28px;
+        }
+      }
+
+      .toggle {
+        margin: 40px 0 0 70px;
+  
+        input[type="checkbox"]{
+          display: none;
+        }
+        
+        label {
+          color: $brand-black;
+          position: relative;
+        }
+        
+        input[type="checkbox"] + label::before {
+          background:$brand-light-blue;
+          border: 1px solid $brand-light-blue;
+          border-radius: 9px;
+          content: ' ';
+          display: block;
+          height: 18px;
+          left: -65px;
+          position: absolute;
+          top: 0px;
+          width: 45px;
+        }
+        
+        input[type="checkbox"] + label::after {
+          background: $brand-light-blue;
+          border: 1px solid $brand-light-blue; 
+          border-radius: 50%;
+          content: ' ';
+          display: block;
+          height: 30px; 
+          left: -75px; 
+          position: absolute;
+          top: -6px;
+          transition: all 0.3s ease-in;
+          width: 30px; 
+        }
+        
+        input[type="checkbox"]:checked + label::after {
+          background: $brand-pink;
+          border: 1px solid $brand-pink; 
+          left: -40px; 
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+  }
 }
